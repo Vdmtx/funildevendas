@@ -15,14 +15,14 @@
             background-color: #0C0C1A;
             color: #E0E0FF; 
             margin: 0;
-            padding-bottom: 120px; 
+            padding-bottom: 200px; /* Aumentado para garantir que o rodapé não fique atrás das imagens */
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
             padding: 60px 20px;
             text-align: center;
-            position: relative; /* Necessário para o conteúdo ficar sobre as imagens de fundo */
+            position: relative; 
             z-index: 2;
         }
         h1 {
@@ -124,26 +124,24 @@
             border-top: 1px solid #2E44FF; 
         }
 
-        /* --- NOVOS ESTILOS PARA AS IMAGENS FIXAS --- */
+        /* MUDANÇA NO Z-INDEX PARA TRAZER AS IMAGENS PARA A FRENTE */
         .imagem-fixa-fundo {
             position: fixed;
             bottom: 0;
-            width: 35%; /* Largura relativa à tela */
-            max-width: 450px; /* Tamanho máximo */
+            width: 35%; 
+            max-width: 450px; 
             height: auto;
-            z-index: 1; /* Coloca as imagens atrás do conteúdo */
-            pointer-events: none; /* Faz com que as imagens não sejam clicáveis */
+            z-index: 3; /* Traz as imagens para a frente do conteúdo */
+            pointer-events: none; 
         }
         .imagem-fixa-esquerda {
-            left: 5%; /* Posição a partir da esquerda */
+            left: 5%; 
         }
         .imagem-fixa-direita {
-            right: 5%; /* Posição a partir da direita */
+            right: 5%; 
         }
         
-        /* AJUSTES PARA CELULAR */
         @media (max-width: 992px) {
-             /* Esconde as imagens fixas em tablets e celulares para não poluir a tela */
             .imagem-fixa-fundo {
                 display: none;
             }
