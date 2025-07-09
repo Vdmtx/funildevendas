@@ -136,27 +136,18 @@
         .secao-amostra h2 {
             color: #2E44FF; 
         }
-        .secao-amostra form {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            margin-top: 20px;
-            flex-wrap: wrap;
+        .secao-amostra p {
+            margin-bottom: 30px; /* Mais espaço antes do botão */
         }
-        .secao-amostra input {
-            padding: 15px;
-            width: 300px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            font-size: 1rem;
-        }
+        /* BOTÃO DE AMOSTRA AGORA É UM LINK */
         .botao-amostra {
+            display: inline-block; /* Faz o link se comportar como um botão */
             background-color: #2E44FF; 
             color: #FFFFFF;
             padding: 15px 30px;
             font-size: 1.1rem;
             font-weight: bold;
+            text-decoration: none; /* Remove o sublinhado do link */
             border-radius: 8px;
             border: none;
             cursor: pointer;
@@ -170,6 +161,7 @@
             background-color: rgba(26, 34, 64, 0.8); 
             border-top: 1px solid #2E44FF; 
         }
+
         .selo-fixo {
             position: fixed; 
             bottom: 25px;    
@@ -185,6 +177,7 @@
         .selo-fixo:hover img {
             transform: scale(1.1); 
         }
+
         @media (max-width: 768px) {
             h1 { font-size: 2.8rem; }
             h2 { font-size: 2.2rem; }
@@ -214,20 +207,25 @@
                 display: none;
             }
         }
+
     </style>
 </head>
+
 <body>
     <header class="secao-principal">
         <div class="container">
             <h1>Aprenda a Falar a Língua dos Robôs e Tenha Resultados Incríveis</h1>
             <p>Chega de respostas sem graça. Comande a Inteligência Artificial e faça dela sua maior ajudante no trabalho.</p>
+            
             <div class="imagem-principal">
                 <img src="https://raw.githubusercontent.com/Vdmtx/Vdmtx-Designer-Grafico/main/ChatGPT%20Image%204%20de%20jul.%20de%202025%2C%2012_40_16.png" alt="Ilustração de um cérebro digital e uma pessoa interagindo com inteligência artificial">
             </div>
+
             <a href="https://pay.hotmart.com/C98760749O?checkoutMode=10&bid=1751642541426" class="botao-comprar">QUERO MEU EBOOK AGORA</a>
             <span class="texto-garantia">Compra segura e acesso imediato.</span>
         </div>
     </header>
+
     <main>
         <section class="secao-escura secao-com-imagem">
             <div class="container">
@@ -245,14 +243,14 @@
                 </div>
             </div>
         </section>
+
         <section class="secao-amostra">
             <div class="container">
                 <h2>NÃO TEM CERTEZA? EXPERIMENTE!</h2>
                 <p>Receba o <strong>primeiro capítulo de graça</strong> no seu email e veja como é fácil começar.</p>
-                <form action="https://9e1d9ac5.sibforms.com/serve/MUIFAEcutJ_yUe8w1k4qWVvL_oankcVFMLXo8l4MZwHeDrU8Fl3uWnPGmDKq8E0i_UMHcJQFpqVYofLU4LBD5rO4D570MR7gAN64xTHCVA08gD7L6NI3CXecuD_jpvxzZIgCLi3ZzB0aPjbyWpQon5TyRk6UZ9GsW8ukFYsXZvQEwLTDgMY95LmKqnX4j6mz_Oj3DQkXSUdaKbTq" method="POST">
-                    <input type="email" name="EMAIL" placeholder="Digite seu melhor email" required>
-                    <button type="submit" class="botao-amostra">PEGAR MINHA AMOSTRA</button>
-                </form>
+                
+                <a href="https://9e1d9ac5.sibforms.com/serve/MUIFAEcutJ_yUe8w1k4qWVvL_oankcVFMLXo8l4MZwHeDrU8Fl3uWnPGmDKq8E0i_UMHcJQFpqVYofLU4LBD5rO4D570MR7gAN64xTHCVA08gD7L6NI3CXecuD_jpvxzZIgCLi3ZzB0aPjbyWpQon5TyRk6UZ9GsW8ukFYsXZvQEwLTDgMY95LmKqnX4j6mz_Oj3DQkXSUdaKbTq" class="botao-amostra" target="_blank">PEGAR MINHA AMOSTRA</a>
+
             </div>
         </section>
         <section class="secao-escura">
