@@ -98,41 +98,22 @@
         .secao-escura {
             background-color: rgba(26, 34, 64, 0.8);
         }
-        .secao-com-imagem .container {
-            display: flex;
-            align-items: stretch; 
-            gap: 40px;
-            text-align: left;
-        }
-        .secao-com-imagem .coluna-imagem {
-            flex: 1;
-        }
-        .secao-com-imagem .coluna-imagem img {
-            width: 100%;
-            height: 100%; 
-            object-fit: cover; 
-            border-radius: 10px;
-        }
-        .secao-com-imagem .coluna-texto {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center; 
-        }
         .lista-itens {
             display: flex;
             flex-direction: column;
             gap: 20px;
             margin-top: 20px;
-            align-items: flex-start; 
+            align-items: center; 
         }
         .item {
             background-color: rgba(12, 12, 26, 0.7); 
             padding: 20px;
             border-radius: 8px;
             border-left: 4px solid #AE67F7; 
-            width: 100%;
+            width: 90%;
+            max-width: 500px;
             box-sizing: border-box; 
+            text-align: left;
         }
         .secao-amostra {
             background-color: rgba(26, 34, 64, 0.8);
@@ -146,7 +127,9 @@
             background-color: rgba(26, 34, 64, 0.8); 
             border-top: 1px solid #2E44FF; 
         }
-        .selo-fixo {
+
+        /* --- ESTILOS PARA AS IMAGENS FIXAS --- */
+        .selo-fixo-direito {
             position: fixed; 
             bottom: 25px;    
             right: 25px;     
@@ -154,40 +137,49 @@
             height: 180px;
             z-index: 1000;   
         }
-        .selo-fixo img {
+        .selo-fixo-direito img {
             width: 100%;
             transition: transform 0.2s ease-in-out; 
         }
-        .selo-fixo:hover img {
+        .selo-fixo-direito:hover img {
+            transform: scale(1.1); 
+        }
+        
+        .selo-fixo-esquerdo {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            width: 180px;
+            height: 180px;
+            z-index: 1000;
+        }
+        .selo-fixo-esquerdo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Garante que a imagem preencha o círculo sem distorcer */
+            border-radius: 50%; /* Deixa a imagem redonda */
+            border: 3px solid #AE67F7; /* Adiciona uma borda roxa */
+            transition: transform 0.2s ease-in-out; 
+        }
+        .selo-fixo-esquerdo:hover img {
             transform: scale(1.1); 
         }
 
+        /* AJUSTES PARA CELULAR */
         @media (max-width: 768px) {
             h1 { font-size: 2.8rem; }
             h2 { font-size: 2.2rem; }
-            .secao-com-imagem .container {
-                flex-direction: column; 
-                text-align: center;
+            .item {
+                max-width: 100%;
             }
-            .secao-com-imagem .coluna-texto {
-                text-align: center;
-            }
-            .secao-com-imagem .coluna-texto h2 {
-                margin-top: 40px;
-            }
-            .secao-com-imagem .lista-itens {
-                align-items: center;
-            }
-            .secao-com-imagem .item {
-                text-align: left;
-            }
-            .selo-fixo {
-                width: 120px;
-                height: 120px;
+            .selo-fixo-direito, .selo-fixo-esquerdo {
+                width: 100px; /* Selos menores no celular */
+                height: 100px;
             }
         }
-        @media (max-width: 480px) {
-            .selo-fixo {
+        @media (max-width: 600px) {
+             /* Esconde os selos em telas muito pequenas para não atrapalhar */
+            .selo-fixo-direito, .selo-fixo-esquerdo {
                 display: none;
             }
         }
@@ -206,19 +198,14 @@
         </div>
     </header>
     <main>
-        <section class="secao-escura secao-com-imagem">
+        <section class="secao-escura">
             <div class="container">
-                <div class="coluna-imagem">
-                    <img src="https://raw.githubusercontent.com/Vdmtx/Vdmtx-Designer-Grafico/main/526e69cc-69ea-4fb6-8763-54e001fceb49.png" alt="Ilustração abstrata de tecnologia">
-                </div>
-                <div class="coluna-texto">
-                    <h2 class="titulo-branco">ESTE EBOOK É PARA VOCÊ QUE...</h2>
-                    <div class="lista-itens">
-                        <div class="item">...já tentou usar a IA e não gostou da resposta.</div>
-                        <div class="item">...quer usar a IA para trabalhar mais rápido e melhor.</div>
-                        <div class="item">...busca um guia fácil, sem complicação e direto ao ponto.</div>
-                        <div class="item">...quer se destacar, não importa qual seja a sua profissão.</div>
-                    </div>
+                <h2 class="titulo-branco">ESTE EBOOK É PARA VOCÊ QUE...</h2>
+                <div class="lista-itens">
+                    <div class="item">...já tentou usar a IA e não gostou da resposta.</div>
+                    <div class="item">...quer usar a IA para trabalhar mais rápido e melhor.</div>
+                    <div class="item">...busca um guia fácil, sem complicação e direto ao ponto.</div>
+                    <div class="item">...quer se destacar, não importa qual seja a sua profissão.</div>
                 </div>
             </div>
         </section>
@@ -245,10 +232,14 @@
     </main>
     <footer>
         <p>&copy; 2025 NEXUS AETHER & VDMTX. Todos os direitos reservados.</p>
-        
-        </footer>
-    <div class="selo-fixo">
+    </footer>
+
+    <div class="selo-fixo-esquerdo">
+        <img src="https://raw.githubusercontent.com/Vdmtx/funildevendas/main/Homem%20lendo%20tablet%20em%20ambiente%20acolhedor.png" alt="Homem lendo tablet">
+    </div>
+    <div class="selo-fixo-direito">
         <img src="https://raw.githubusercontent.com/Vdmtx/Vdmtx-Designer-Grafico/main/ChatGPT%20Image%209%20de%20jul.%20de%202025%2C%2009_24_22.png" alt="Selo Nexus Aether e DMTX">
     </div>
+
 </body>
 </html>
