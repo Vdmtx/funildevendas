@@ -22,6 +22,8 @@
             margin: 0 auto;
             padding: 60px 20px;
             text-align: center;
+            position: relative; /* Necessário para o conteúdo ficar sobre as imagens de fundo */
+            z-index: 2;
         }
         h1 {
             font-size: 3.2rem;
@@ -50,22 +52,14 @@
         .subtexto-grande {
             font-size: 1.3rem;
         }
+        .secao-principal, .secao-escura, .secao-amostra, footer {
+            position: relative;
+            z-index: 2;
+        }
         .secao-principal {
             padding-top: 60px;
             padding-bottom: 60px;
             background-color: rgba(12, 12, 26, 0.7);
-        }
-        .secao-principal h1 {
-            line-height: 1.2;
-        }
-        .secao-principal p {
-            font-size: 1.2rem;
-            color: #E0E0FF;
-            margin-bottom: 40px;
-        }
-        .imagem-principal {
-            display: flex;
-            justify-content: center;
         }
         .imagem-principal img {
             max-width: 550px; 
@@ -73,6 +67,8 @@
             border-radius: 10px;
             margin-bottom: 40px; 
             display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
         .botao-comprar {
             display: inline-block;
@@ -128,63 +124,33 @@
             border-top: 1px solid #2E44FF; 
         }
 
-        /* --- ESTILOS PARA AS IMAGENS FIXAS --- */
-        .selo-fixo-direito {
-            position: fixed; 
-            bottom: 25px;    
-            right: 25px;     
-            width: 180px;
-            height: 180px;
-            z-index: 1000;   
+        /* --- NOVOS ESTILOS PARA AS IMAGENS FIXAS --- */
+        .imagem-fixa-fundo {
+            position: fixed;
+            bottom: 0;
+            width: 35%; /* Largura relativa à tela */
+            max-width: 450px; /* Tamanho máximo */
+            height: auto;
+            z-index: 1; /* Coloca as imagens atrás do conteúdo */
+            pointer-events: none; /* Faz com que as imagens não sejam clicáveis */
         }
-        .selo-fixo-direito img {
-            width: 100%;
-            transition: transform 0.2s ease-in-out; 
+        .imagem-fixa-esquerda {
+            left: 5%; /* Posição a partir da esquerda */
         }
-        .selo-fixo-direito:hover img {
-            transform: scale(1.1); 
+        .imagem-fixa-direita {
+            right: 5%; /* Posição a partir da direita */
         }
         
-        .selo-fixo-esquerdo {
-            position: fixed;
-            bottom: 25px;
-            left: 25px;
-            width: 180px;
-            height: 180px;
-            z-index: 1000;
-        }
-        .selo-fixo-esquerdo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Garante que a imagem preencha o círculo sem distorcer */
-            border-radius: 50%; /* Deixa a imagem redonda */
-            border: 3px solid #AE67F7; /* Adiciona uma borda roxa */
-            transition: transform 0.2s ease-in-out; 
-        }
-        .selo-fixo-esquerdo:hover img {
-            transform: scale(1.1); 
-        }
-
         /* AJUSTES PARA CELULAR */
-        @media (max-width: 768px) {
-            h1 { font-size: 2.8rem; }
-            h2 { font-size: 2.2rem; }
-            .item {
-                max-width: 100%;
-            }
-            .selo-fixo-direito, .selo-fixo-esquerdo {
-                width: 100px; /* Selos menores no celular */
-                height: 100px;
-            }
-        }
-        @media (max-width: 600px) {
-             /* Esconde os selos em telas muito pequenas para não atrapalhar */
-            .selo-fixo-direito, .selo-fixo-esquerdo {
+        @media (max-width: 992px) {
+             /* Esconde as imagens fixas em tablets e celulares para não poluir a tela */
+            .imagem-fixa-fundo {
                 display: none;
             }
         }
     </style>
 </head>
+
 <body>
     <header class="secao-principal">
         <div class="container">
@@ -234,12 +200,8 @@
         <p>&copy; 2025 NEXUS AETHER & VDMTX. Todos os direitos reservados.</p>
     </footer>
 
-    <div class="selo-fixo-esquerdo">
-        <img src="https://raw.githubusercontent.com/Vdmtx/funildevendas/main/Homem%20lendo%20tablet%20em%20ambiente%20acolhedor.png" alt="Homem lendo tablet">
-    </div>
-    <div class="selo-fixo-direito">
-        <img src="https://raw.githubusercontent.com/Vdmtx/Vdmtx-Designer-Grafico/main/ChatGPT%20Image%209%20de%20jul.%20de%202025%2C%2009_24_22.png" alt="Selo Nexus Aether e DMTX">
-    </div>
+    <img class="imagem-fixa-fundo imagem-fixa-esquerda" src="https://raw.githubusercontent.com/Vdmtx/funildevendas/main/ChatGPT%20Image%209%20de%20jul.%20de%202025%2C%2019_55_28.png" alt="Mulher mostrando tablet com ícones de prompts">
+    <img class="imagem-fixa-fundo imagem-fixa-direita" src="https://raw.githubusercontent.com/Vdmtx/funildevendas/main/Homem%20lendo%20tablet%20em%20ambiente%20acolhedor.png" alt="Homem lendo tablet">
 
 </body>
 </html>
