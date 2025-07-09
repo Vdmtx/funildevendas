@@ -63,11 +63,17 @@
             color: #E0E0FF;
             margin-bottom: 40px;
         }
+        /* Correção para a linha branca */
+        .imagem-principal {
+            display: flex;
+            justify-content: center;
+        }
         .imagem-principal img {
             max-width: 550px; 
             width: 90%;
             border-radius: 10px;
             margin-bottom: 40px; 
+            display: block;
         }
         .botao-comprar {
             display: inline-block;
@@ -137,17 +143,16 @@
             color: #2E44FF; 
         }
         .secao-amostra p {
-            margin-bottom: 30px; /* Mais espaço antes do botão */
+            margin-bottom: 30px;
         }
-        /* BOTÃO DE AMOSTRA AGORA É UM LINK */
         .botao-amostra {
-            display: inline-block; /* Faz o link se comportar como um botão */
+            display: inline-block; 
             background-color: #2E44FF; 
             color: #FFFFFF;
             padding: 15px 30px;
             font-size: 1.1rem;
             font-weight: bold;
-            text-decoration: none; /* Remove o sublinhado do link */
+            text-decoration: none; 
             border-radius: 8px;
             border: none;
             cursor: pointer;
@@ -221,7 +226,7 @@
                 <img src="https://raw.githubusercontent.com/Vdmtx/Vdmtx-Designer-Grafico/main/ChatGPT%20Image%204%20de%20jul.%20de%202025%2C%2012_40_16.png" alt="Ilustração de um cérebro digital e uma pessoa interagindo com inteligência artificial">
             </div>
 
-            <a href="https://pay.hotmart.com/C98760749O?checkoutMode=10&bid=1751642541426" class="botao-comprar">QUERO MEU EBOOK AGORA</a>
+            <a href="https://pay.hotmart.com/C98760749O?checkoutMode=10&bid=1751642541426" class="botao-comprar" target="_blank">QUERO MEU EBOOK AGORA</a>
             <span class="texto-garantia">Compra segura e acesso imediato.</span>
         </div>
     </header>
@@ -263,7 +268,7 @@
             <div class="container">
                 <h2 class="titulo-branco titulo-grande">PRONTO PARA COMEÇAR?</h2>
                 <p class="subtexto-grande">Todo o conhecimento que você precisa para sair na frente está a um clique de distância.</p>
-                <a href="https://pay.hotmart.com/C98760749O?checkoutMode=10&bid=1751642541426" class="botao-comprar">SIM, QUERO COMPRAR O EBOOK</a>
+                <a href="https://pay.hotmart.com/C98760749O?checkoutMode=10&bid=1751642541426" class="botao-comprar" target="_blank">SIM, QUERO COMPRAR O EBOOK</a>
                 <span class="texto-garantia">Acesso para sempre, sem mensalidades.</span>
             </div>
         </section>
